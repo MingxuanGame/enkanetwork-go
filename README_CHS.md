@@ -1,16 +1,16 @@
 # EnkaNetwork-Go
 
-**EN** | [CHS](README_CHS.md)
+[EN](README.md) | **CNS**
 
-🎉This project is a wrapper for https://enka.network written in Go.
+🎉这个项目是使用 Go 编写的 https://enka.network API 包装
 
-## 🚩Installation
+## 安装
 
 ```bash
 go get github.com/MingxuanGame/enkanetwork-go
 ```
 
-## 🚀Usage
+## 🚀使用方法
 
 ```go
 package main
@@ -49,7 +49,7 @@ func main() {
 }
 ```
 
-Output:
+输出：
 
 ```
 ---Player Data---
@@ -67,10 +67,10 @@ Level: 60
 ------
 ```
 
-## 💡Example
+## 💡示例
 
-See the [example](example/) folder.
+请查看 [example](example/) 文件夹
 
-## 📄LICENSE
+## 📄许可证
 
 [MIT License](LICENSE)
