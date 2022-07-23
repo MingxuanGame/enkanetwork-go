@@ -1,7 +1,10 @@
+// This package defines localization related constants or functions
 package lang
 
+// Language type
 type Lang uint8
 
+// Language const
 const (
 	EN Lang = iota
 	RU

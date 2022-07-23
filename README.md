@@ -4,6 +4,8 @@
 
 🎉This project is a wrapper for https://enka.network written in Go.
 
+Godoc: https://pkg.go.dev/github.com/MingxuanGame/enkanetwork-go
+
 ## 🚩Installation
 
 ```bash

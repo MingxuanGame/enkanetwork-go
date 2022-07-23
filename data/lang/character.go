@@ -2,6 +2,7 @@ package lang
 
 import "fmt"
 
+// Characters Names in different languages
 var CHARACTER = map[string][]string{
 	"10000002": {
 		"Kamisato Ayaka",
@@ -875,6 +876,7 @@ var CHARACTER = map[string][]string{
 	},
 }
 
+// GetCharacterName gets the localized name of the specified language from CHARACTERS
 func GetCharacterName(lang Lang, character uint32) (name string, err error) {
 	if lang > 12 {
 		return "", fmt.Errorf("lang not found: %d", lang)

@@ -1,5 +1,12 @@
+// This package defines the model returned by Enka.Network
+// Please also use with Enka.Network documentation  
+// 
+// https://api.enka.network
 package model
 
+
+// playerInfo JSON-data
+// https://api.enka.network/#/api?id=playerinfo
 type PlayerInfo struct {
 	Nickname             string `json:"nickname"`
 	Level                uint8  `json:"level"`
@@ -22,30 +29,48 @@ type PlayerInfo struct {
 
 // ===== Characters Info ===== //
 
+// propMap JSON-data
+// https://api.enka.network/#/api?id=propmap
 type PropMap struct {
 	Type uint32 `json:"type"`
 	Ival string `json:"ival"` // Ignore It!
 	Val  string `json:"val,omitempty"`
 }
 
+// reliquary JSON-data
+// https://api.enka.network/#/api?id=reliquary
 type Artifact struct {
 	Level            uint8    `json:"level"`
 	MainPropId       uint16   `json:"mainPropId"`
 	AppendPropIdList []uint32 `json:"appendPropIdList"`
 }
 
+// weapon JSON-data
+// https://api.enka.network/#/api?id=weapon
 type Weapon struct {
 	Level        uint8            `json:"level"`
 	PromoteLevel uint8            `json:"promoteLevel"`
 	AffixMap     map[string]uint8 `json:"affixMap"`
 }
 
+// reliquaryMainstat, reliquarySubstats, weaponStats JSON-data
+// https://api.enka.network/#/api?id=reliquarymainstat-reliquarysubstats-weaponstats
+//
+// SubPropId: appendPropId
+//
+// Value: propValue
 type Stat struct {
 	MainPropId string  `json:"mainPropId,omitempty"`
 	SubPropId  string  `json:"appendPropId,omitempty"`
 	Value      float64 `json:"statValue"`
 }
 
+// flat JSON-data
+// https://api.enka.network/#/api?id=flat
+// 
+// NameTextHash: nameTextHashMap
+//
+// SetNameTextHash: setNameTextHashMap
 type Flat struct {
 	// l10n
 	NameTextHash    uint32 `json:"nameTextHashMap"`
@@ -64,6 +89,8 @@ type Flat struct {
 	Icon      string `json:"icon"`      // You can get the icon from https://enka.network/ui/{Icon}.png
 }
 
+// every equipList element
+// https://api.enka.network/#/api?id=equiplist
 type Equip struct {
 	ItemId    uint32   `json:"itemId"`
 	Reliquary Artifact `json:"reliquary,omitempty"`
@@ -71,6 +98,8 @@ type Equip struct {
 	Flat      Flat     `json:"flat"`
 }
 
+// every avatarInfoList element
+// https://api.enka.network/#/api?id=avatarinfolist
 type AvatarInfo struct {
 	AvatarId               uint32             `json:"avatarID"`
 	TalentIdList           []uint16           `json:"talentIdList,omitempty"`
@@ -85,8 +114,12 @@ type AvatarInfo struct {
 	} `json:"fetterInfo"`
 }
 
+// avatarInfoList JSON-data
+// https://api.enka.network/#/api?id=avatarinfolist
 type AvatarInfoList []AvatarInfo
 
+// all JSON-data
+// https://api.enka.network/#/api?id=data-structure-info
 type EnkaNetworkData struct {
 	PlayerInfo     PlayerInfo     `json:"playerInfo"`
 	AvatarInfoList AvatarInfoList `json:"avatarInfoList"`

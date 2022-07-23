@@ -4,6 +4,7 @@
 
 🎉这个项目是使用 Go 编写的 https://enka.network API 包装
 
+Godoc: https://pkg.go.dev/github.com/MingxuanGame/enkanetwork-go
 ## 🚩安装
 
 ```bash
