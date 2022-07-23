@@ -2,21 +2,21 @@ package model
 
 type PlayerInfo struct {
 	Nickname             string `json:"nickname"`
-	Level                int    `json:"level"`
+	Level                uint8  `json:"level"`
 	Signature            string `json:"signature"`
-	WorldLevel           int    `json:"worldLevel"`
-	NameCardID           int    `json:"nameCardId"`
-	FinishAchievementNum int    `json:"finishAchievementNum"`
-	TowerFloorIndex      int    `json:"towerFloorIndex"`
-	TowerLevelIndex      int    `json:"towerLevelIndex"`
+	WorldLevel           uint8  `json:"worldLevel"`
+	NameCardID           uint32 `json:"nameCardId"`
+	FinishAchievementNum uint32 `json:"finishAchievementNum"`
+	TowerFloorIndex      uint8  `json:"towerFloorIndex"` // max: 12
+	TowerLevelIndex      uint8  `json:"towerLevelIndex"` // max: 3
 	ShowAvatarInfoList   []struct {
-		AvatarID  int `json:"avatarId"`
-		Level     int `json:"level"`
-		CostumeID int `json:"costumeId,omitempty"`
+		AvatarID  uint32 `json:"avatarId"`
+		Level     uint8  `json:"level"`
+		CostumeID uint32 `json:"costumeId,omitempty"`
 	} `json:"showAvatarInfoList"`
-	ShowNameCardIDList []int `json:"showNameCardIdList"`
+	ShowNameCardIDList []uint32 `json:"showNameCardIdList,omitempty"`
 	ProfilePicture     struct {
-		AvatarID int `json:"avatarId"`
+		AvatarID uint32 `json:"avatarId"`
 	} `json:"profilePicture"`
 }
 
